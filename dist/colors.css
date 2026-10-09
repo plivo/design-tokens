@@ -151,9 +151,9 @@
   --bubble-agent: hsla(220, 100%, 96%, 1);
   --outbound-green: rgb(13, 121, 108);
   --inbound-green: rgb(111, 207, 201);
-  --available: hsla(146, 64%, 36%, 1);
-  --away: hsla(45, 86%, 62%, 1);
-  --idle: hsla(28, 87%, 62%, 1);
+  --available: hsl(var(--status-success));
+  --away: hsl(var(--status-warning));
+  --idle: hsl(var(--status-neutral));
   --chart-1: 236.764706deg 99.029126% 59.607843%;
   --chart-2: 223.111111deg 83.850932% 68.431373%;
   --chart-3: 188.620690deg 79.209040% 39.607843%;

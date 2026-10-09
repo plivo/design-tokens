@@ -32,12 +32,14 @@
   "h3-600": {
     "size": "18px",
     "line": "26px",
-    "weight": 600
+    "weight": 600,
+    "tracking": "-0.01em"
   },
   "h3-400": {
     "size": "18px",
     "line": "26px",
-    "weight": 400
+    "weight": 400,
+    "tracking": "-0.01em"
   },
   "h4-500": {
     "size": "16px",
@@ -48,85 +50,100 @@
   "h4-600": {
     "size": "16px",
     "line": "26px",
-    "weight": 600
+    "weight": 600,
+    "tracking": "-0.01em"
   },
   "h4-400": {
     "size": "16px",
     "line": "26px",
-    "weight": 400
+    "weight": 400,
+    "tracking": "-0.01em"
   },
   "p-600": {
     "size": "14px",
     "line": "22px",
-    "weight": 600
+    "weight": 600,
+    "tracking": "0em"
   },
   "p-500": {
     "size": "14px",
     "line": "22px",
-    "weight": 500
+    "weight": 500,
+    "tracking": "0em"
   },
   "p-400": {
     "size": "14px",
     "line": "22px",
-    "weight": 400
+    "weight": 400,
+    "tracking": "0em"
   },
   "pi-400": {
     "size": "14px",
     "line": "22px",
     "weight": 400,
+    "tracking": "0em",
     "style": "italic"
   },
   "s-600": {
     "size": "13px",
     "line": "20px",
-    "weight": 600
+    "weight": 600,
+    "tracking": "0em"
   },
   "s-500": {
     "size": "13px",
     "line": "20px",
-    "weight": 500
+    "weight": 500,
+    "tracking": "0em"
   },
   "s-400": {
     "size": "13px",
     "line": "20px",
-    "weight": 400
+    "weight": 400,
+    "tracking": "0em"
   },
   "xs-600": {
     "size": "12px",
     "line": "17px",
-    "weight": 600
+    "weight": 600,
+    "tracking": "0em"
   },
   "xs-500": {
     "size": "12px",
     "line": "17px",
-    "weight": 500
+    "weight": 500,
+    "tracking": "0em"
   },
   "xs-400": {
     "size": "12px",
     "line": "17px",
-    "weight": 400
+    "weight": 400,
+    "tracking": "0em"
   },
   "xsi-400": {
     "size": "12px",
     "line": "17px",
     "weight": 400,
+    "tracking": "0em",
     "style": "italic"
   },
   "xxs-400": {
     "size": "10px",
     "line": "13px",
-    "weight": 400
+    "weight": 400,
+    "tracking": "0em"
   },
   "xxs-600": {
     "size": "10px",
     "line": "13px",
-    "weight": 600
+    "weight": 600,
+    "tracking": "0em"
   },
   "label": {
     "size": "11px",
     "line": "14px",
     "weight": 500,
-    "tracking": "0.14em",
+    "tracking": "0.08em",
     "family": "jetbrains",
     "transform": "uppercase"
   },
