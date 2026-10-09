@@ -459,7 +459,7 @@ Empty state: a `label` eyebrow, an `h4-500` line, an `xs-400` explanation at `{c
 Not on npm yet — install from git:
 
 ```bash
-npm i github:samuellawerentz/plivo-tokens   # or a #<tag> / #<sha> to pin
+npm i github:plivo/design-tokens   # or a #<tag> / #<sha> to pin
 ```
 
 ```css
