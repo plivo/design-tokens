@@ -130,6 +130,10 @@ module.exports = {
                 "3xl": "var(--radius)",
                 "full": "9999px"
           },
+          "boxShadow": {
+                "sh1": "var(--shadow-1)",
+                "sh2": "var(--shadow-2)"
+          },
           "fontFamily": {
                 "jetbrains": [
                       "JetBrains Mono",

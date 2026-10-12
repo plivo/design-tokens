@@ -78,6 +78,9 @@
   --color-border-strong: hsl(var(--border-strong));
   --color-code: hsl(var(--code));
   --color-code-foreground: hsl(var(--code-foreground));
+
+  --shadow-sh1: var(--shadow-1);
+  --shadow-sh2: var(--shadow-2);
 }
 
 @theme inline reference {
@@ -309,6 +312,7 @@
 @utility text-kicker {
   font-family: var(--font-mono);
   text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
 }
 
 @utility text-cta {

@@ -60,7 +60,7 @@ writeFileSync(
   `${jsBanner}
 module.exports = {
   theme: {
-    extend: ${JSON.stringify({ colors, borderRadius: theme.borderRadius, fontFamily: theme.fontFamily, fontSize }, null, 6).replace(/\n/g, '\n    ')},
+    extend: ${JSON.stringify({ colors, borderRadius: theme.borderRadius, boxShadow: kit.shadow, fontFamily: theme.fontFamily, fontSize }, null, 6).replace(/\n/g, '\n    ')},
   },
 }
 `
@@ -132,11 +132,13 @@ ${Object.entries(type).map(([n, t]) => rule(n, t)).join('\n\n')}
 `
 )
 
-/* Tailwind v4 reads its theme from CSS, not from a JS preset. Colours go in a
-   plain `inline` block so var(--color-*) also works in hand-written CSS. Radius
-   and type go in `inline reference`: utilities only, no emitted variables —
-   --radius would otherwise be declared as itself, and --text-<name> would
-   collide with type.css, which uses those names for `font` shorthands. */
+/* Tailwind v4 reads its theme from CSS, not from a JS preset. Colours and
+   shadows go in a plain `inline` block, so Tailwind also emits a --color-* /
+   --shadow-* variable for any stylesheet or scanned source that names one
+   (it tree-shakes the rest). Radius and type go in `inline reference`:
+   utilities only, no emitted variables — --radius would otherwise be declared
+   as itself, and --text-<name> would collide with type.css, which uses those
+   names for `font` shorthands. */
 // DEFAULT first: JS enumerates integer-like keys (surface's "2") ahead of it.
 const v4Colors = Object.entries(colors).flatMap(([name, value]) =>
   typeof value === 'string'
@@ -182,6 +184,8 @@ writeFileSync(
 
 @theme inline {
 ${v4Colors.map(([n, v]) => `  --color-${n}: ${v};`).join('\n')}
+
+${Object.entries(kit.shadow).map(([n, v]) => `  --shadow-${n}: ${v};`).join('\n')}
 }
 
 @theme inline reference {

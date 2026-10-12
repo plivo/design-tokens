@@ -64,6 +64,35 @@ Two layers, one stylesheet:
 `--primary` is **ink**, the action fill. The blue is `--brand` for fills and
 `--brand-text` for text, which lifts to `#4d6aff` on dark.
 
+## In a shadcn/ui app
+
+The palette's names follow the console, and three of them mean something else to
+stock shadcn/ui components. Remap them after the import:
+
+```css
+@theme inline {
+  /* shadcn's secondary is a quiet fill; the palette's --secondary is slate text. */
+  --color-secondary: hsl(var(--surface-2));
+  --color-secondary-foreground: hsl(var(--foreground));
+  /* shadcn apps use success/warning as marks; the palette's pairs are tint fills. */
+  --color-success: hsl(var(--status-success));
+  --color-warning: hsl(var(--status-warning));
+}
+```
+
+`--primary` needs no remap: it is ink in both.
+
+If the app merges classes with tailwind-merge (shadcn's `cn()`), register the
+ramp as font sizes. Otherwise tailwind-merge reads `text-label` as a colour and
+silently drops it beside `text-foreground`:
+
+```ts
+import { extendTailwindMerge } from 'tailwind-merge'
+import ramp from '@plivo/tokens/type.json'
+
+const twMerge = extendTailwindMerge({ extend: { theme: { text: Object.keys(ramp) } } })
+```
+
 ## The type ramp
 
 The product ramp is `<role>-<weight>`: `p-400` is 14px/22px at weight 400, and

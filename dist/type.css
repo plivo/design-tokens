@@ -335,6 +335,7 @@
   letter-spacing: 0.12em;
   font-family: var(--font-mono, ui-monospace, monospace);
   text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
 }
 
 .text-cta {

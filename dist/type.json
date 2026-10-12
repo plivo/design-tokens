@@ -200,7 +200,8 @@
     "weight": 500,
     "tracking": "0.12em",
     "family": "jetbrains",
-    "transform": "uppercase"
+    "transform": "uppercase",
+    "numeric": "tabular-nums"
   },
   "cta": {
     "size": "11px",

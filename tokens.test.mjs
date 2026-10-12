@@ -121,3 +121,11 @@ test('the v4 stylesheet maps colours, one corner, and role families', () => {
   // A body token naming a family would sort after font-mono and undo it.
   assert.doesNotMatch(v4, /@utility text-p-400 /)
 })
+
+test('floating elevation ships as shadow-sh1 / shadow-sh2 in both Tailwind shapes', () => {
+  // The console's own utility names, so markup ports both ways; the values stay theme-aware.
+  assert.deepEqual(preset.theme.extend.boxShadow, { sh1: 'var(--shadow-1)', sh2: 'var(--shadow-2)' })
+  assert.match(v4, /--shadow-sh1: var\(--shadow-1\);/)
+  assert.match(v4, /--shadow-sh2: var\(--shadow-2\);/)
+  for (const name of ['--shadow-1', '--shadow-2']) assert.notEqual(light[name], darkRoot[name], `${name} has a dark value`)
+})

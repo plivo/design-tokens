@@ -477,8 +477,8 @@ The surface ladder and hairlines do the work:
 3. `surface-2` plus `border`: the second lift (popover bodies, table heads, dark bands).
 
 **Shadow is only for layers that float off the page:**
-- `--shadow-1`: dropdowns, popovers, the command palette.
-- `--shadow-2`: toasts, drag previews.
+- `--shadow-1` (`shadow-sh1`): dropdowns, popovers, the command palette.
+- `--shadow-2` (`shadow-sh2`): toasts, drag previews.
 
 Buttons, cards, inputs, panels and table containers carry **no shadow**. To separate two regions, change the surface step or draw a border; don't add a shadow level. To force a dark band onto a light page (a pre-footer, for example), put `.dark` on the band: every token resolves dark inside it.
 
