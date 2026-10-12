@@ -319,3 +319,66 @@
   --vibing-gradient-from: hsl(var(--brand));
   --vibing-gradient-to: hsl(var(--brand));
 }
+
+/* The plivo.com theme kit — authored here, not extracted.
+   The console is mid-way through adopting the kit; this layer carries the parts
+   of it the extracted palette does not have yet, so one stylesheet gives every
+   consumer the whole theme. build.mjs appends it after the extracted block, so
+   on a name clash the kit wins — today that is only the brand blue, on purpose.
+   Values are the production plivo.com tokens, spelled as HSL channel triplets
+   like the rest of the palette so they compose with hsl(var(--x) / <alpha>). */
+
+:root {
+  /* Exact brand blue, #323dfe. Upstream spells it 237 99% 60%, which renders
+     #343efe — a rounding slip, not a second blue (chart-1 upstream is already
+     exact). Fills, focus accents, LED dots, waveforms. Blue TEXT on dark lifts
+     to #4d6aff, below. */
+  --brand: 236.764706 99.029126% 59.607843%;
+  --brand-text: 236.764706 99.029126% 59.607843%;
+
+  /* Elevation is a surface step plus a hairline, never a shadow:
+     background -> surface -> surface-2. */
+  --surface: 240 5% 98%; /* #fafafa: cards and panels on the page */
+  --surface-2: 240 6% 96%; /* #f4f4f5: popovers, bands, table heads, tab tracks */
+
+  /* The emphasis hairline: input outlines, focused and hovered panels. */
+  --border-strong: 240 6% 80%; /* #c9c9cf */
+
+  /* Code blocks and terminal bodies. */
+  --code: 240 5% 96%; /* #f4f4f5 */
+  --code-foreground: 240 10% 12%; /* #1c1c22 */
+
+  /* The CTA voice: mono, uppercase, wide-tracked. 600 needs JetBrains Mono
+     loaded at 600; a console that only loads 400;500 drops to 500 rather than
+     render a synthesised bold. Dense product chrome tightens the tracking. */
+  --cta-font: var(--font-mono, ui-monospace, monospace);
+  --cta-size: 11px;
+  --cta-weight: 600;
+  --cta-tracking: 0.14em;
+  --cta-tracking-dense: 0.05em;
+
+  /* Motion. Restrained and quick: colour changes at fast, overlays at base,
+     on-load reveals at reveal with list items staggered. A pressed control
+     moves down by press-offset over the press duration. */
+  --duration-press: 50ms;
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-reveal: 500ms;
+  --stagger-reveal: 95ms;
+  --ease-standard: ease;
+  --press-offset: 1px;
+}
+
+.dark {
+  /* Restated, not new: the extracted .dark already lifts blue text to #4d6aff,
+     but :root and .dark tie on specificity, so on <html class="dark"> the kit's
+     later :root above would win and drop the lift. */
+  --brand-text: 230 100% 65%; /* #4d6aff */
+
+  /* True dark, not an inversion: each lift steps lightness up a few points. */
+  --surface: 225 15% 8%; /* #111317 */
+  --surface-2: 225 14% 11%; /* #181a20 */
+  --border-strong: 225 10% 28%; /* #40444f */
+  --code: 225 14% 11%; /* #181a20 */
+  --code-foreground: 240 5% 90%; /* #e4e4e7 */
+}
