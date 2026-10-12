@@ -16,6 +16,7 @@
   },
   "scripts": {
     "extract": "node scripts/extract.mjs",
+    "compare-site": "node scripts/compare-site.mjs",
     "build": "node build.mjs",
     "test": "node --test",
     "scrub": "bash scripts/scrub.sh",

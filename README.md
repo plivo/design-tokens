@@ -135,6 +135,7 @@ Plivo's internal console, which is mid-way through adopting the plivo.com kit.
 
 ```sh
 node scripts/extract.mjs <console-repo> <git-ref>   # Plivo engineers only
+node scripts/compare-site.mjs <website-repo>        # kit layer vs plivo.com
 node build.mjs
 node --test
 ```
@@ -150,6 +151,11 @@ branch moves and diff `src/`.
 |---|---|---|
 | `src/colors.css`, `src/type.json`, `src/theme.json`, `src/meta.json` | extracted | re-running `extract.mjs`, never by hand |
 | `src/kit.css`, `src/kit.json` | authored | hand |
+
+`compare-site.mjs` keeps the authored half honest the same way: it reads
+plivo.com's theme blocks, Instrument Panel recipe and DESIGN.md type table, and
+exits non-zero if any kit token has drifted from them. Names both systems
+define print as NOTE, since the console value ships there by design.
 
 The build appends the kit after the extraction and refuses to start if
 `kit.json` redefines an extracted name. When upstream adopts a kit token, the
