@@ -1,7 +1,7 @@
 {
   "name": "@plivo/tokens",
-  "version": "0.1.0",
-  "description": "Plivo design tokens \u2014 colours, type ramp and radius, as CSS custom properties, plain CSS classes and a Tailwind preset.",
+  "version": "0.2.0",
+  "description": "Plivo design tokens \u2014 colours, type ramp, radius and motion, as CSS custom properties, plain CSS classes, a Tailwind v4 theme and a Tailwind v3 preset.",
   "license": "MIT",
   "type": "module",
   "files": [
@@ -11,10 +11,12 @@
     "./colors.css": "./dist/colors.css",
     "./type.css": "./dist/type.css",
     "./type.json": "./dist/type.json",
+    "./tailwind.css": "./dist/tailwind.css",
     "./tailwind": "./dist/tailwind.cjs"
   },
   "scripts": {
     "extract": "node scripts/extract.mjs",
+    "compare-site": "node scripts/compare-site.mjs",
     "build": "node build.mjs",
     "test": "node --test",
     "scrub": "bash scripts/scrub.sh",
